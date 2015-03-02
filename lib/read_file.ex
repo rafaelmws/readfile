@@ -1,6 +1,6 @@
 defmodule ReadFile do
 
-  def print_line(file) do
+  defp print_line(file) do
     line = IO.read(file, :line)
     if line != :eof do
       IO.puts(line)
@@ -10,8 +10,7 @@ defmodule ReadFile do
     end
   end
 
-  def generateSql() do
-    file_name = "/Users/rafael/Downloads/10mb.txt"
+  def read_file(file_name) do
     case File.open(file_name, [:read]) do
       {:ok, file} -> print_line(file)
       {:error, message} -> IO.puts "Erro ao abrir arquivo"

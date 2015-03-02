@@ -1,7 +1,10 @@
-defmodule Mix.Tasks.GenSql do
+defmodule Mix.Tasks.Read do
   use Mix.Task
 
-  def run(_) do
-    ReadFile.generateSql()
+  @shortdoc "Print line by line"
+
+  def run(file_name) do
+    ReadFile.read_file(file_name)
   end
+
 end
